@@ -84,3 +84,15 @@ El estado le permite a los componentes de React cambiar su salida a lo largo del
 #### ¿Qué devuelve useState?
 
 * Devuelve una pareja de valores (array): el estado actual y una función que lo actualiza.
+
+## React.StrictMode
+
++  Verificar que los componentes internos estén siguiendo algunas de las prácticas recomendadas y le avise si no está en la consola.
+
++ Verificar que los métodos en desuso no se estén usando y, si se usan, el modo estricto le avisará en la consola.
+
++ Ayudarle a prevenir algunos efectos secundarios mediante la identificación de riesgos potenciales
+
+>[!WARNING]
+>StrictMode renderizará los componentes dos veces solo en el modo de desarrollo, no en el de producción.
+>StrictMode renderiza los componentes dos veces para detectar cualquier problema con su código y advertirle sobre ellos.
