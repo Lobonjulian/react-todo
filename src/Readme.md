@@ -49,3 +49,21 @@ Tipos comunes de PropTypes:
 10. oneOfType([type1, type2, ...]): Valida que la prop cumpla con al menos uno de los tipos de datos especificados en un array.
 11. arrayOf(type): Valida que la prop sea un array que contenga elementos del tipo especificado.
 12. objectOf(type): Valida que la prop sea un objeto cuyos valores sean del tipo especificado.
+
+## Manejando eventos
+
+Los eventos de React se nombran usando camelCase, en vez de minúsculas,Con JSX pasas una función como el manejador del evento, en vez de un string.
+
+ > [!TIP]
+ >En React, el Fragment: Un patrón común en React es que un componente devuelva múltiples elementos. Los Fragmentos te permiten agrupar una lista de hijos sin agregar nodos extra al DOM.
+
+## Hooks
+Los Hooks son funciones que te permiten “enganchar” el estado de React y el ciclo de vida desde componentes de función.
+
+¿que pasa si hago algo?
+
+>[!TIP]
+>Los hooks no funcionan dentro de las clases — te permiten usar React sin clases.
+
+### Estado
+El estado le permite a los componentes de React cambiar su salida a lo largo del tiempo en respuesta a acciones del usuario, respuestas de red y cualquier otra cosa.
