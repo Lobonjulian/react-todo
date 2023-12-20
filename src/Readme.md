@@ -27,3 +27,25 @@ son componentes que encapsulan el comportamiento que necesitas. Entonces, puedes
 ## Props
 
 Se utiliza para enviar información al componente anidado, La información que transmites de esta manera se llama props.
+
+### PropTypes  
+
+<code>npm install --save prop-types </code>
+
+
+En React, PropTypes es una característica que permite especificar el tipo de las props (propiedades) que se pasan a los componentes.
+PropTypes proporciona una forma de documentar y validar las props que se esperan en un componente, lo que ayuda a evitar errores y facilita el desarrollo y mantenimiento del código.
+Tipos comunes de PropTypes:
+
+1. number: Valida que la prop sea un número.
+2. bool: Valida que la prop sea un valor  booleano (true o false).
+3. array: Valida que la prop sea un array.
+4. object: Valida que la prop sea un objeto.
+5. symbol: Valida que la prop sea un símbolo.
+6. node: Valida que la prop pueda ser cualquier cosa que se pueda renderizar en React (elemento React, cadena de texto, número, fragmento, etc.).
+7. element: Valida que la prop sea un único elemento React (es decir, no un fragmento ni una cadena de texto).
+8. instanceOf(Constructor): Valida que la prop sea una instancia de una clase específica.
+9. oneOf([val1, val2, ...]): Valida que la prop sea uno de los valores proporcionados en un array.
+10. oneOfType([type1, type2, ...]): Valida que la prop cumpla con al menos uno de los tipos de datos especificados en un array.
+11. arrayOf(type): Valida que la prop sea un array que contenga elementos del tipo especificado.
+12. objectOf(type): Valida que la prop sea un objeto cuyos valores sean del tipo especificado.
