@@ -67,3 +67,20 @@ Los Hooks son funciones que te permiten “enganchar” el estado de React y el 
 
 ### Estado
 El estado le permite a los componentes de React cambiar su salida a lo largo del tiempo en respuesta a acciones del usuario, respuestas de red y cualquier otra cosa.
+
+---
+#### ¿Qué hace la llamada a useState?
+
+1. Declara una “variable de estado”.
+
+2. useState es una nueva forma de usar exactamente las mismas funciones que this.state nos da en una clase.
+
+3. Normalmente, las variables “desaparecen” cuando se sale de la función, pero las variables de estado son conservadas por React.
+
+#### ¿Qué pasamos a useState como argumento?#
+
+* El único argumento para el Hook useState() es el estado inicial.
+
+#### ¿Qué devuelve useState?
+
+* Devuelve una pareja de valores (array): el estado actual y una función que lo actualiza.
