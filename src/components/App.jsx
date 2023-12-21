@@ -31,11 +31,39 @@ const App = () => {
     setTodos(newTodos);
   };
 
+  const updateTodo = (id) => {
+    const newTodos = todo.map((todo) => {
+      if (todo.id === id) {
+        todo.state = !todo.state;
+      }
+      return todo;
+    });
+    setTodos(newTodos);
+  };
+
+  const orderTodos = (arrayTodos) => {
+    return arrayTodos.sort((a, b) => {
+      if (a.priority === b.priority) {
+        return 0;
+      }
+      if (a.priority) {
+        return -1;
+      }
+      if (!a.priority) {
+        return 1;
+      }
+    });
+  };
+
   return (
     <>
       <h1 className="text-3xl text-center my-5">Todo List </h1>
       <FormControlado addTodo={addTodo} />
-      <Todos todos={todos} deleteTodo={deleteTodo} />
+      <Todos
+        todos={orderTodos(todos)}
+        deleteTodo={deleteTodo}
+        updateTodo={updateTodo}
+      />
     </>
   );
 };

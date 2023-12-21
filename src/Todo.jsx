@@ -1,4 +1,4 @@
-const Todo = ({ todo, deleteTodo }) => {
+const Todo = ({ todo, deleteTodo, updateTodo }) => {
   const { title, description, state, priority } = todo;
   return (
     <li className="flex justify-between items-start">
@@ -6,7 +6,10 @@ const Todo = ({ todo, deleteTodo }) => {
         <h5 className={`${state && "line-through"}`}>{title}</h5>
         <p>{description}</p>
         <div className="flex gap-2">
-          <button className="bg-blue-500 text-white px-2 py-1 rounded-md">
+          <button
+            className="bg-blue-500 text-white px-2 py-1 rounded-md"
+            onClick={() => updateTodo(todo.id)}
+          >
             Actualizar
           </button>{" "}
           <button
