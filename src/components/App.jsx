@@ -26,11 +26,16 @@ const App = () => {
     setTodos([...todos, todo]);
   };
 
+  const deleteTodo = (id) => {
+    const newTodos = todos.filter((todo) => todo.id !== id);
+    setTodos(newTodos);
+  };
+
   return (
     <>
       <h1 className="text-3xl text-center my-5">Todo List </h1>
       <FormControlado addTodo={addTodo} />
-      <Todos todos={todos} />
+      <Todos todos={todos} deleteTodo={deleteTodo} />
     </>
   );
 };
