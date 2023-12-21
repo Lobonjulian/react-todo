@@ -12,6 +12,14 @@ const FormControlado = () => {
     console.log(todo);
   };
 
+  const handleChange = (e) => {
+    // utilizando el callback
+    setTodo((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
   return (
     <div className="container mt-2">
       <h1 className="text-center text-2xl m-4 text-sky-600">
@@ -26,25 +34,28 @@ const FormControlado = () => {
           name="todoNombre"
           placeholder="Ingrese una tarea"
           value={todo.todoNombre}
-          onChange={(e) => setTodo({ ...todo, todoNombre: e.target.value })}
+          onChange={handleChange}
         />
         <textarea
           className="border border-slate-300 resize-none rounded p-2 w-1/2 h-24 "
           name="description"
           placeholder="Ingrese una descripción"
           value={todo.description}
-          onChange={(e) => setTodo({ ...todo, description: e.target.value })}
+          onChange={handleChange}
         />
         <select
           className="border border-slate-300 rounded-sm p-2 w-1/4"
           name="todoEstado"
           value={todo.todoEstado}
-          onChange={(e) => setTodo({ ...todo, todoEstado: e.target.value })}
+          onChange={handleChange}
         >
           <option value="pendiente">Pendiente</option>
           <option value="completado">Completado</option>
         </select>
-        <button className="bg-lime-500 text-white px-4 py-2 rounded-md">
+        <button
+          type="submit"
+          className="bg-lime-500 text-white px-4 py-2 rounded-md"
+        >
           Agregar
         </button>
       </form>
