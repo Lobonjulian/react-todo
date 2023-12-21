@@ -13,3 +13,12 @@
 ## Formulario Controlado 
 
 Los componentes React que rendericen un formulario también controlan lo que pasa en ese formulario con las subsecuentes entradas del usuario.
+
+## Validaciones populares 
+
+---
+1. Formik 
+<code> npm i formik </code>
+
+2. react hook form 
+<code> npm install react-hook-form </code>

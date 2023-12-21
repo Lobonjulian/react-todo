@@ -5,12 +5,35 @@ const FormControlado = () => {
     todoNombre: "",
     description: "",
     todoEstado: "pendiente",
+    todocheck: false,
   });
+
+  const [error, setError] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(todo);
+
+    const { todoNombre, description } = todo;
+
+    //validación
+    if (!todoNombre.trim() || !description.trim()) {
+      console.log("campos vacios");
+      setError(true);
+      return;
+    } else {
+      setError(false);
+    }
+    // Enviar todo a un array!
   };
+  const MostrarError = () => (
+    <div
+      className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative"
+      role="alert"
+    >
+      {" "}
+      todos los campos son Obligatorios{" "}
+    </div>
+  );
 
   const handleChange = (e) => {
     const { name, value, checked, type } = e.target;
@@ -28,8 +51,9 @@ const FormControlado = () => {
       <h1 className="text-center text-2xl m-4 text-sky-600">
         Formulario Controlado
       </h1>
+      {error && <MostrarError />}
       <form
-        className="flex flex-col gap-8 justify-center items-center"
+        className="flex flex-col mt-2 gap-8 justify-center items-center"
         onSubmit={handleSubmit}
       >
         <input
