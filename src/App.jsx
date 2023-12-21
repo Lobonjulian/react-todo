@@ -1,5 +1,9 @@
 import { useState } from "react";
 
+const ActionButton = ({ count = 0, ...props }) => {
+  return <button {...props}>Decremento {count}</button>;
+};
+
 const App = () => {
   const [count, setCount] = useState(0);
 
@@ -17,13 +21,13 @@ const App = () => {
         <div className="flex flex-col gap-4">
           <h1 className="text-2xl ">Contador {count}</h1>
           <div className="flex justify-center gap-4">
-            <button
+            <ActionButton
+              count={count}
               className="bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded"
               onClick={handleClickDecrement}
               disabled={count === 0 && true}
-            >
-              Decremento
-            </button>
+            />
+
             <button
               className="bg-slate-600 hover:bg-slate-700 text-white font-bold py-2 px-4 rounded"
               onClick={handleClickIncrement}
