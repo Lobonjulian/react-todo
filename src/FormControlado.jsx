@@ -13,13 +13,16 @@ const FormControlado = () => {
   };
 
   const handleChange = (e) => {
+    const { name, value, checked, type } = e.target;
+
     // utilizando el callback
     setTodo((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: type === "checkbox" ? checked : value,
     }));
   };
 
+  console.log(todo);
   return (
     <div className="container mt-2">
       <h1 className="text-center text-2xl m-4 text-sky-600">
@@ -43,6 +46,19 @@ const FormControlado = () => {
           value={todo.description}
           onChange={handleChange}
         />
+        <div>
+          <input
+            className="border border-slate-300"
+            type="checkbox"
+            id="todoEstado"
+            checked={todo.todoCheck}
+            onChange={handleChange}
+            name="todoCheck"
+          />
+          <label htmlFor="todoEstado" className="ml-2">
+            Prioridad
+          </label>
+        </div>
         <select
           className="border border-slate-300 rounded-sm p-2 w-1/4"
           name="todoEstado"
