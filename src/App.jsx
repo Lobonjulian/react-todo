@@ -1,9 +1,9 @@
-import FormNoControlado from "./FormNoControlado";
+import FormControlado from "./FormControlado";
 
 const App = () => {
   return (
     <>
-      <FormNoControlado />
+      <FormControlado />
     </>
   );
 };

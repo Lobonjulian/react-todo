@@ -5,12 +5,15 @@ const FormNoControlado = () => {
 
   //formulario no controlado
   const handleSubmit = (e) => {
-    console.log(formulario.current);
+    // console.log(formulario.current);
     e.preventDefault();
 
     const datos = new FormData(formulario.current);
+    // spread operator: permite a un elemento iterable ser expandido
+    // copia cada uno de sus elementos
     console.log(...datos.entries());
 
+    // El método Object.fromEntries() transforma una lista de pares con [clave-valor] en un objeto.
     const objectoDatos = Object.fromEntries([...datos.entries()]);
 
     if (!objectoDatos.tarea.trim()) {
