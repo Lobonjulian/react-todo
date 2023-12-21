@@ -1,26 +1,16 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FormControlado from "./FormControlado";
 import Todos from "./Todos";
 
-const initialStateTodo = [
-  {
-    id: 1,
-    title: "Tarea",
-    description: "Descripción de la tarea inicial",
-    state: "completado",
-    priority: false,
-  },
-  {
-    id: 2,
-    title: "Tarea 2",
-    description: "Descripción de la segunda tarea",
-    state: "pendiente",
-    priority: true,
-  },
-];
+const initialStateTodo = JSON.parse(localStorage.getItem("todos")) || [];
 
 const App = () => {
   const [todos, setTodos] = useState(initialStateTodo);
+
+  // Solo utilizamos un useEffect para actualizar LocalStorage
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (todo) => {
     setTodos([...todos, todo]);
