@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
 const FormControlado = ({ addTodo }) => {
   const [todo, setTodo] = useState({
@@ -16,12 +17,25 @@ const FormControlado = ({ addTodo }) => {
     //validación
     if (!title.trim() || !description.trim()) {
       console.log("campos Incompletos");
+      Swal.fire({
+        title: "Error",
+        text: "Todos los campos son obligatorios",
+        icon: "error",
+      });
       return;
     }
+
     addTodo({
       id: Date.now(),
       ...todo,
       state: state === "completado",
+    });
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Tarea agregada",
+      timer: 1500,
+      showConfirmButton: false,
     });
   };
 
@@ -35,7 +49,6 @@ const FormControlado = ({ addTodo }) => {
     }));
   };
 
-  console.log(todo);
   return (
     <div className="container mt-2">
       <h2 className="text-center text-2xl m-4 text-sky-600">Formulario</h2>

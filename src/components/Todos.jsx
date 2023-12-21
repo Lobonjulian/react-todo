@@ -1,15 +1,12 @@
+import Todo from "../Todo";
+
 const Todos = ({ todos }) => {
   return (
     <main>
-      <h2>Todos</h2>
-      <ul>
+      <h2 className="text-center my-5">Todos</h2>
+      <ul className="flex justify-center item-center flex-col gap-4">
         {todos.map((todo) => (
-          <li key={todo.id}>
-            <h3>{todo.title}</h3>
-            <p>{todo.description}</p>
-            <p>{todo.state ? "Completado" : "Pendiente"}</p>
-            <p>{todo.priority ? "Prioridad" : "sin Prioridad"}</p>
-          </li>
+          <Todo key={todo.id} todo={todo} />
         ))}
       </ul>
     </main>
